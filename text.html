@@ -4,10 +4,16 @@
 <head> 
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title> 
-    <script src="jquery-3.6.0.js"></script>
+    <title>text</title> 
+    <script src="Company profile/jquery-3.6.0.js"></script>
 </head> 
 <style>
+    .key, .key2{
+        cursor: pointer;
+        float:left;
+        padding:20px;
+        border: 1px solid black;
+    }
     #result {
         width: 20%;
         height:30px;
@@ -16,28 +22,68 @@
         line-height: 30px;
     }
     .count {
+        cursor: pointer;
         font-size: 20px;
         width:5%;
         height:5%;
     }
+
 </style>
 <body> 
     <div>
         <h3>First number:<input type="number" name="fNumber" id="fNumber" placeholder="Input first number"></h3>
+        <div class="keyNumber">
+            <div class="key">0</div>
+            <div class="key">1</div>
+            <div class="key">2</div>
+            <div class="key">3</div>
+            <div class="key">4</div>
+            <div class="key">5</div>
+            <div class="key">6</div>
+            <div class="key">7</div>
+            <div class="key">8</div>
+            <div class="key">9</div>
+        </div><br><br><br>
         <h3>Second number:<input type="number" name="sNumber" id="sNumber" placeholder="Input second number"></h3>
+        <div class="keyNumber">
+            <div class="key2">0</div>
+            <div class="key2">1</div>
+            <div class="key2">2</div>
+            <div class="key2">3</div>
+            <div class="key2">4</div>
+            <div class="key2">5</div>
+            <div class="key2">6</div>
+            <div class="key2">7</div>
+            <div class="key2">8</div>
+            <div class="key2">9</div>
+        </div><br><br><br><br>
         <input class="count" type="button" onclick="plus()" value="&#43">
         <input class="count" type="button" onclick="minus()" value="&#8722">
         <input class="count" type="button" onclick="times()" value="&#215">
         <input class="count" type="button" onclick="divide()" value="&#247">
         <h3>Result:<p id="result"></p></h3>
     </div>
+    
 <script>
+
+    $("div.key").click(function(e){
+        var currentName = $("#fNumber").val();
+        $("#fNumber").val(currentName + $(this).text());
+});
+
+    $("div.key2").click(function(e){
+        var currentName = $("#sNumber").val();
+        $("#sNumber").val(currentName + $(this).text());
+});
+
     $('.count').click(function(){
    if($('#fNumber').val() == ''|| $('#sNumber').val() == ''){
       alert('Input can not be left blank');
       document.getElementById("result").innerHTML='';
    }
 });
+
+
     function plus() {
         var fNumber = parseFloat(document.getElementById("fNumber").value);
         var sNumber = parseFloat(document.getElementById("sNumber").value);
