@@ -4,15 +4,22 @@
 <head> 
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>text</title> 
+    <title>Simple Calculator</title> 
+    <script src="Company profile/jquery-3.6.0.js"></script>
 </head> 
 <style>
     #result {
         width: 20%;
-        height:40px;
+        height:30px;
         border: 1px solid black;
+        font-size: 20px;
+        line-height: 30px;
     }
-
+    .count {
+        font-size: 20px;
+        width:5%;
+        height:5%;
+    }
 </style>
 <body> 
     <div>
@@ -25,6 +32,12 @@
         <h3>Result:<p id="result"></p></h3>
     </div>
 <script>
+    $('.count').click(function(){
+   if($('#fNumber').val() == ''|| $('#sNumber').val() == ''){
+      alert('Input can not be left blank');
+      document.getElementById("result").innerHTML='';
+   }
+});
     function plus() {
         var fNumber = parseFloat(document.getElementById("fNumber").value);
         var sNumber = parseFloat(document.getElementById("sNumber").value);
