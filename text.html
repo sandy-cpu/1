@@ -1,0 +1,55 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title> 
+</head> 
+<style>
+    #result {
+        width: 20%;
+        height:40px;
+        border: 1px solid black;
+    }
+
+</style>
+<body> 
+    <div>
+        <h3>First number:<input type="number" name="fNumber" id="fNumber" placeholder="Input first number"></h3>
+        <h3>Second number:<input type="number" name="sNumber" id="sNumber" placeholder="Input second number"></h3>
+        <input class="count" type="button" onclick="plus()" value="&#43">
+        <input class="count" type="button" onclick="minus()" value="&#8722">
+        <input class="count" type="button" onclick="times()" value="&#215">
+        <input class="count" type="button" onclick="divide()" value="&#247">
+        <h3>Result:<p id="result"></p></h3>
+    </div>
+<script>
+    function plus() {
+        var fNumber = parseFloat(document.getElementById("fNumber").value);
+        var sNumber = parseFloat(document.getElementById("sNumber").value);
+        var result = fNumber+sNumber;
+        document.getElementById("result").innerHTML=result;
+    }
+    function minus() {
+        var fNumber = parseFloat(document.getElementById("fNumber").value);
+        var sNumber = parseFloat(document.getElementById("sNumber").value);
+        var result = fNumber-sNumber;
+        document.getElementById("result").innerHTML=result;
+    }
+    function times() {
+        var fNumber = parseFloat(document.getElementById("fNumber").value);
+        var sNumber = parseFloat(document.getElementById("sNumber").value);
+        var result = fNumber*sNumber;
+        document.getElementById("result").innerHTML=result;
+    }
+    function divide() {
+        var fNumber = parseFloat(document.getElementById("fNumber").value);
+        var sNumber = parseFloat(document.getElementById("sNumber").value);
+        var result = fNumber/sNumber;
+        document.getElementById("result").innerHTML=result;
+    }
+    
+</script> 
+</body> 
+</html>  
